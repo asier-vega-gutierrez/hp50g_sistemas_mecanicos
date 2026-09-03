@@ -1,0 +1,61 @@
+%%HP: T(0)A(D)F(.);
+@ Autor: Asier
+@ VersiÛn: 0.1
+
+CLEAR
+  @Configura en modo grados
+  DEG
+
+ "longitud_accion" {"r_p" "r_g" "a" "ang_p" "ex_0 in_1"} {2. 4.}
+ {} {}
+ INFORM
+ 
+ DROP
+
+ 'lista' STO
+ lista 1 GET
+ lista 2 GET
+ lista 3 GET
+ lista 4 GET
+ lista 5 GET
+ 
+ 'EXIN' STO
+ 'ANGP' STO
+ 'A' STO
+ 'RG' STO
+ 'RP' STO
+
+ IF
+   'EXIN==0' 
+ THEN
+     RP A + 2^
+     RP ANGP COS * 2^
+     - 
+     É
+
+     RG A + 2 ^
+     RG ANGP COS * 2^
+     -
+     É
+     
+     +
+     RP RG + ANGP SIN *
+     - "Z" çTAG            
+ ELSE
+     RP A + 2^
+     RP ANGP COS * 2^
+     -
+     É
+
+     RG A - 2 ^
+     RG ANGP COS * 2^
+     -
+     É
+
+     -
+     RG RP - ANGP SIN *
+     + "Z" çTAG
+ END     
+
+
+ {EXIN ANGP A RG RP lista} PURGE 

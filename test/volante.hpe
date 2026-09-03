@@ -1,0 +1,211 @@
+%%HP: T(0)A(D)F(.);
+@ Argumentos:
+@ Autor:
+@ E-mail:
+@ VersiÛn:
+@ Creado con HPUserEdit 6
+
+CLEAR
+
+    @Configura en modo radianes
+    RAD
+
+    @Recojer los datos
+    "volante" {"A" "w_2" "k"} { 1 0 }
+    { } { }
+    INFORM
+    DROP
+    
+    'lista' STO
+    lista 1 GET
+    lista 2 GET
+    lista 3 GET  
+     
+    'k' STO    
+    'w2' STO
+    'A' STO  
+
+    @Primer termino
+    "T_1" {"K_1" "B_1" "C_1" "min" "max"} { 3 0 }
+    { } { }
+    INFORM
+    DROP 
+             
+    'lista' STO
+    lista 1 GET
+    lista 2 GET
+    lista 3 GET
+    lista 4 GET
+    lista 5 GET        
+
+    'limmax1' STO
+    'limmin1' STO
+    'C1' STO
+    'B1' STO
+    'K1' STO    
+
+    @Formar la expresion (fun = K + A*B_x * sen(C_x*o2)) 
+    B1 A * 
+    C1 o2 * SIN
+    *
+    K1 + 
+    'fun1' STO
+    
+    @Segundo termino
+    "T_2" {"K_2" "B_2" "C_2" "min" "max"} { 3 0 }
+    { } { }
+    INFORM
+    DROP
+
+    'lista' STO
+    lista 1 GET
+    lista 2 GET
+    lista 3 GET
+    lista 4 GET
+    lista 5 GET    
+
+    'limmax2' STO
+    'limmin2' STO   
+    'C2' STO
+    'B2' STO
+    'K2' STO    
+    
+    @Formar la expresion (fun = K + A*B_x * sen(C_x*o2))
+    B2 A *
+    C2 o2 * SIN
+    *
+    K2 +
+    'fun2' STO        
+
+    @Tercer termino
+    "T_3" {"K_3" "B_3" "C_3" "min" "max"} { 3 0 }
+    { } { }
+    INFORM
+    DROP
+
+    'lista' STO
+    lista 1 GET
+    lista 2 GET
+    lista 3 GET
+    lista 4 GET
+    lista 5 GET    
+
+    'limmax3' STO
+    'limmin3' STO    
+    'C3' STO
+    'B3' STO
+    'K3' STO        
+
+    @Formar la expresion (fun = K + A*B_x * sen(C_x*o2))
+    B3 A *
+    C3 o2 * SIN
+    *
+    K3 +
+    'fun3' STO  
+
+    @Cuarto termino
+    "T_4" {"K_4" "B_4" "C_4" "min" "max" } { 3 0 }
+    { } { }
+    INFORM
+    DROP
+
+    'lista' STO
+    lista 1 GET
+    lista 2 GET
+    lista 3 GET
+    lista 4 GET
+    lista 5 GET    
+
+    'limmax4' STO
+    'limmin4' STO  
+    'C4' STO
+    'B4' STO
+    'K4' STO    
+
+    @Formar la expresion (fun = K + A*B_x * sen(C_x*o2))
+    B4 A *
+    C4 o2 * SIN
+    *
+    K4 +
+    'fun4' STO          
+        
+    @Calcular el par de torsion promedio
+    limmin1 limmax1 fun1 o2 Ñ
+    'E1' STO    
+    limmin2 limmax2 fun2 o2 Ñ
+    'E2' STO    
+    limmin3 limmax3 fun3 o2 Ñ
+    'E3' STO    
+    limmin4 limmax4 fun4 o2 Ñ   
+    'E4' STO
+    E1 E2 E3 E4 + + +
+    limmax4 /
+    'Tprom' STO  
+
+    @Calcular la posicon maxima y minima de velociad de rotacion
+              
+    E1    
+    limmax1 limmin1 -
+    Tprom *
+    -
+    'A1' STO
+
+    E2
+    limmax2 limmin2 -
+    Tprom *
+    -
+    'A2' STO
+
+    E3
+    limmax3 limmin3 -
+    Tprom *
+    -
+    'A3' STO
+
+    E4
+    limmax4 limmin4 -
+    Tprom *
+    -
+    'A4' STO                
+
+    @Lista del acumulado de energia
+    A1
+    A1 A2 +
+    A1 A2 A3 + + 
+    A1 A2 A3 A4 + + +                        
+    4 çLIST
+    'Elist' STO
+    
+    @Valor de energia del volante                
+    Elist SORT
+    LISTç
+    DROP
+    'Emax' STO
+    DROP
+    DROP
+    'Emin' STO  
+    Emax Emin - ABS
+    'E' STO        
+
+    @Inercia del volante
+    E
+    k w2 w2 * *
+    /
+    'I' STO                        
+        
+    @Resultados
+    E1 "E_1" çTAG
+    E2 "E_2" çTAG
+    E3 "E_3" çTAG
+    E4 "E_4" çTAG  
+    Tprom "Tprom" çTAG  
+    A1 "A_1" çTAG
+    A2 "A_2" çTAG
+    A3 "A_3" çTAG
+    A4 "A_4" çTAG  
+    Elist "E_list" çTAG  
+    I "I" çTAG
+
+    @Eliminar todas la varibles
+    {I Elist A4 A3 A2 A1 Tprom E4 E3 E2 E1 Emax Emin Elist fun4 fun3 fun2 fun1 B4 B3 B2 B1 
+    C4 C3 C2 C1 limmax4 limmax3 limmax2 limmax1 limmin4 limmin3 limmin2 limmin1 lista k w2 A K1 K2 K3 K4 E IERR} PURGE
