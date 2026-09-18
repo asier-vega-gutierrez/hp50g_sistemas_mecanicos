@@ -522,10 +522,10 @@ DIR
     EVAL
     ª
   x003
-    ´ CLEAR CLLCD "JUNTA PASADOR ABIERTO" { { "Eslabon 1:" "Longitud de la
-    bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 } { "Eslabon 3:" "Longitud
-    del acoplador" 0 } { "Eslabon 4:" "Longitud de la salida" 0 } { "Angulo ï2:"
-    "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
+    ´ CLEAR CLLCD "JUNTA PASADOR ABIERTO" { 
+    { "Eslabon 1:" "Longitud de la bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 } 
+    { "Eslabon 3:" "Longitud del acoplador" 0 } { "Eslabon 4:" "Longitud de la salida" 0 } 
+    { "Angulo ï2:" "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
     STO 'c' STO 'b' STO 'a' STO 'd' STO CLEAR d a b c 4 çLIST SORT HEAD d a b c 4
     çLIST SORT REVLIST HEAD ç S L
       ´ S L + 'N' STO
@@ -542,14 +542,14 @@ DIR
       END CLLCD d a / 'K1' STO d c / 'K2' STO
       '(a^2-b^2+c^2+d^2)/(2*a*c)' EVAL 'K3' STO ï2 COS K1 - K2 ï2 COS * - K3 + 'A'
       STO 0 2 - ï2 SIN * 'B' STO K1 K2 1 + ï2 COS * - K3 + 'C' STO
-      'ATAN((-B-É(ABS(B^2-4*A*C)))/(2*A))*2' EVAL 'ï4' STO  @@@
+      'ATAN((-B-É(B^2-4*A*C))/(2*A))*2' EVAL 'ï4' STO  @@@
       IF ï4 TYPE 1 ã
       THEN
         IF ï4 0 <
         THEN ï4 360 + 'ï4' STO
         END d b / 'K4' STO '(c^2-d^2-a^2-b^2)/(2*a*b)' EVAL 'K5' STO ï2 COS K1
         - K4 ï2 COS * + K5 + 'D' STO 0 2 - ï2 SIN * 'E' STO K1 K4 1 - ï2 COS * + K5 +
-        'F' STO 'ATAN((-E-É(ABS(E^2-4*D*F)))/(2*D))*2' EVAL 'ï3' STO   @@@
+        'F' STO 'ATAN((-E-É(E^2-4*D*F))/(2*D))*2' EVAL 'ï3' STO   @@@
         IF ï3 0 <
         THEN ï3 360 + 'ï3' STO
         END 'a*COS(ï2)+a*SIN(ï2)*i' EVAL 'R2' STO 'b*COS(ï3)+b*SIN(ï3)*i' EVAL
@@ -563,10 +563,10 @@ DIR
     ª
   x004
     ´ 
-    CLEAR CLLCD "JUNTA PASADOR CRUZADO" { { "Eslabon 1:" "Longitud de la
-    bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 } { "Eslabon 3:" "Longitud
-    del acoplador" 0 } { "Eslabon 4:" "Longitud de la salida" 0 } { "Angulo ï2:"
-    "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
+    CLEAR CLLCD "JUNTA PASADOR CRUZADO" { 
+    { "Eslabon 1:" "Longitud de la bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 }
+    { "Eslabon 3:" "Longitud del acoplador" 0 } { "Eslabon 4:" "Longitud de la salida" 0 } 
+    { "Angulo ï2:" "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
     STO 'c' STO 'b' STO 'a' STO 'd' STO CLEAR d a b c 4 çLIST SORT HEAD d a b c 4
     çLIST SORT REVLIST HEAD ç S L
       ´ S L + 'N' STO
@@ -583,14 +583,14 @@ DIR
       END CLLCD d a / 'K1' STO d c / 'K2' STO
       '(a^2-b^2+c^2+d^2)/(2*a*c)' EVAL 'K3' STO ï2 COS K1 - K2 ï2 COS * - K3 + 'A'
       STO 0 2 - ï2 SIN * 'B' STO K1 K2 1 + ï2 COS * - K3 + 'C' STO
-      'ATAN((-B+É(ABS(B^2-4*A*C)))/(2*A))*2' EVAL 'ï4' STO    @@@
+      'ATAN((-B+É(B^2-4*A*C))/(2*A))*2' EVAL 'ï4' STO    @@@
       IF ï4 TYPE 1 ã
       THEN
         IF ï4 0 <
         THEN ï4 360 + 'ï4' STO
         END d b / 'K4' STO '(c^2-d^2-a^2-b^2)/(2*a*b)' EVAL 'K5' STO ï2 COS K1
         - K4 ï2 COS * + K5 + 'D' STO 0 2 - ï2 SIN * 'E' STO K1 K4 1 - ï2 COS * + K5 +
-        'F' STO 'ATAN((-E+É(ABS(E^2-4*D*F)))/(2*D))*2' EVAL 'ï3' STO     @@@
+        'F' STO 'ATAN((-E+É(E^2-4*D*F))/(2*D))*2' EVAL 'ï3' STO     @@@
         IF ï3 0 <
         THEN ï3 360 + 'ï3' STO
         END 'a*COS(ï2)+a*SIN(ï2)*i' EVAL 'R2' STO 'b*COS(ï3)+b*SIN(ï3)*i' EVAL
@@ -609,10 +609,10 @@ DIR
     "ï4" çTAG
     ª
   x006
-    ´ CLEAR CLLCD "MANIVELA-CORREDERA ABIERTA" { { "Eslabon 2:" "Longitud de
-    entrada" 0 } { "Eslabon 3:" "Longitud del acoplador" 0 } { "Descentrado:"
-    "Dist. entre eje corredera y pivote maniv." 0 } { "Angulo ï2:" "Angulo entre
-    esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2' STO 'c' STO 'b'
+    ´ CLEAR CLLCD "MANIVELA-CORREDERA ABIERTA" { 
+    { "Eslabon 2:" "Longitud de entrada" 0 } { "Eslabon 3:" "Longitud del acoplador" 0 }
+    { "Descentrado:" "Dist. entre eje corredera y pivote maniv." 0 } 
+    { "Angulo ï2:" "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2' STO 'c' STO 'b'
     STO 'a' STO 'ASIN(-(a*SIN(ï2)-c)/b)+180' EVAL ABS 'ï3' STO      @@@
     IF ï3 TYPE 1 ã
     THEN
@@ -630,10 +630,10 @@ DIR
     ª
   x007
     ´ 
-    CLEAR CLLCD Titulo secciÛn "MANIVELA-CORREDERA CRUZADO" { { "Eslabon 2:"
-    "Longitud de entrada" 0 } { "Eslabon 3:" "Longitud del acoplador" 0 } {
-    "Descentrado:" "Distancia entre eje corredera y pivote manivela" 0 } { "Angulo
-    ï2:" "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
+    CLEAR CLLCD Titulo secciÛn "MANIVELA-CORREDERA CRUZADO" { 
+    { "Eslabon 2:" "Longitud de entrada" 0 } { "Eslabon 3:" "Longitud del acoplador" 0 } 
+    { "Descentrado:" "Distancia entre eje corredera y pivote manivela" 0 } 
+    { "Angulo ï2:" "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
     'ï2' STO 'c' STO 'b' STO 'a' STO 'ASIN((a*SIN(ï2)-c)/b)' EVAL ABS 'ï3' STO   @@@
     IF ï3 TYPE 1 ã
     THEN
@@ -655,14 +655,14 @@ DIR
     ª
   x009
     ´ 
-    CLEAR CLLCD "M-C INVERTIDA ABIERTA" { { "Eslabon 1:" "Longitud de la
-    bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 } { "Eslabon 4:" "Longitud
-    de la salida" 0 } { "Angulo ë:" "Angulo entre ï3 y ï4" 0 } { "Angulo ï2:"
-    "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
+    CLEAR CLLCD "M-C INVERTIDA ABIERTA" { 
+    { "Eslabon 1:" "Longitud de la bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 } 
+    { "Eslabon 4:" "Longitud de la salida" 0 } { "Angulo ë:" "Angulo entre ï3 y ï4" 0 } 
+    { "Angulo ï2:" "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
     STO 'ë' STO 'c' STO 'a' STO 'd' STO 'a*SIN(ï2)*SIN(ë)+(a*COS(ï2)-d)*COS(ë)'
     EVAL 'P' STO '-a*SIN(ï2)*COS(ë)+(a*COS(ï2)-d)*SIN(ë)' EVAL 'Q' STO '-c*SIN(ë)'
     EVAL 'R' STO 'R-Q' EVAL 'S' STO '2*P' EVAL 'T' STO 'Q+R' EVAL 'U' STO
-    'ATAN((-T+É(ABS(T^2-4*S*U)))/(2*S))*2' EVAL 'ï4' STO    @@@
+    'ATAN((-T+É(T^2-4*S*U))/(2*S))*2' EVAL 'ï4' STO    @@@
     IF ï4 TYPE 1 ã
     THEN ï4 ë + 'ï3' STO '(a*SIN(ï2)-c*SIN(ï4))/SIN(ï3)' EVAL 'b' STO
     'a*COS(ï2)+a*SIN(ï2)*i' EVAL 'R2' STO 'b*COS(ï3)+b*SIN(ï3)*i' EVAL 'R3' STO
@@ -674,14 +674,14 @@ DIR
     ª
   x00A
     ´ 
-    CLEAR CLLCD "M-C INVERTIDA CRUZADO" { { "Eslabon 1:" "Longitud de la
-    bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 } { "Eslabon 4:" "Longitud
-    de la salida" 0 } { "Angulo ë:" "Angulo entre ï3 y ï4" 0 } { "Angulo ï2:"
-    "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
+    CLEAR CLLCD "M-C INVERTIDA CRUZADO" { 
+    { "Eslabon 1:" "Longitud de la bancada" 0 } { "Eslabon 2:" "Longitud de entrada" 0 } 
+    { "Eslabon 4:" "Longitud de la salida" 0 } { "Angulo ë:" "Angulo entre ï3 y ï4" 0 } 
+    { "Angulo ï2:" "Angulo entre esl.1 y esl.2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'ï2'
     STO 'ë' STO 'c' STO 'a' STO 'd' STO 'a*SIN(ï2)*SIN(ë)+(a*COS(ï2)-d)*COS(ë)'
     EVAL 'P' STO '-a*SIN(ï2)*COS(ë)+(a*COS(ï2)-d)*SIN(ë)' EVAL 'Q' STO '-c*SIN(ë)'
     EVAL 'R' STO 'R-Q' EVAL 'S' STO '2*P' EVAL 'T' STO 'Q+R' EVAL 'U' STO
-    'ATAN((-T-É(ABS(T^2-4*S*U)))/(2*S))*2' EVAL 'ï4' STO    @@@
+    'ATAN((-T-É(T^2-4*S*U))/(2*S))*2' EVAL 'ï4' STO    @@@
     IF ï4 TYPE 1 ã
     THEN ï4 ë - 'ï3' STO '(a*SIN(ï2)-c*SIN(ï4))/SIN(ï3)' EVAL 'b' STO
     'a*COS(ï2)+a*SIN(ï2)*i' EVAL 'R2' STO 'b*COS(ï3)+b*SIN(ï3)*i' EVAL 'R3' STO
@@ -788,8 +788,8 @@ DIR
     ª
   x012
     ´ 
-    CLLCD "VELOCIDAD J. PASADOR" { { "Velocidad ö2:" "Velocidad angular de
-    salida" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'ö2' STO
+    CLLCD "VELOCIDAD J. PASADOR" { 
+    { "Velocidad ö2:" "Velocidad angular de salida" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'ö2' STO
     IF ö2 0 >
     THEN a ö2 * ABS ï2 90 + ç Re An 'Re*COS(An)+Re*SIN(An)*i' EVAL 'VA' STO
     ELSE a ö2 * ABS ï2 90 - ç Re An 'Re*COS(An)+Re*SIN(An)*i' EVAL 'VA' STO
@@ -811,8 +811,8 @@ DIR
     ª
   x014
     ´ 
-    CLLCD "VELOCIDAD MAN.CORRE." { { "Velocidad ö2:" "Velocidad angular de
-    salida" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'ö2' STO
+    CLLCD "VELOCIDAD MAN.CORRE." { 
+    { "Velocidad ö2:" "Velocidad angular de salida" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'ö2' STO
     IF ö2 0 >
     THEN a ö2 * ABS ï2 90 + ç Re An 'Re*COS(An)+Re*SIN(An)*i' EVAL 'VA' STO
     ELSE a ö2 * ABS ï2 90 - ç Re An 'Re*COS(An)+Re*SIN(An)*i' EVAL 'VA' STO
@@ -831,8 +831,8 @@ DIR
     ª
   x016
     ´ 
-    CLLCD "MANIV.CORRED.INVERTIDA" { { "Velocidad ö2:" "Velocidad angular de
-    salida" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'ö2' STO
+    CLLCD "MANIV.CORRED.INVERTIDA" { 
+    { "Velocidad ö2:" "Velocidad angular de salida" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'ö2' STO
     IF ö2 0 >
     THEN a ö2 * ABS ï2 90 + ç Re An 'Re*COS(An)+Re*SIN(An)*i' EVAL 'VA' STO
     ELSE a ö2 * ABS ï2 90 - ç Re An 'Re*COS(An)+Re*SIN(An)*i' EVAL 'VA' STO
@@ -851,8 +851,8 @@ DIR
     ª
   x018
     ´ 
-    CLLCD "ACELERACION J.PASADOR" { { "Aceleracion å2:" "Aceleracion de
-    entrada" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'å2' STO 'c*SIN(ï4)' EVAL
+    CLLCD "ACELERACION J.PASADOR" { 
+    { "Aceleracion å2:" "Aceleracion de entrada" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'å2' STO 'c*SIN(ï4)' EVAL
     'A1' STO 'b*SIN(ï3)' EVAL 'B1' STO
     'a*å2*SIN(ï2)+a*ö2^2*COS(ï2)+b*ö3^2*COS(ï3)-c*ö4^2*COS(ï4)' EVAL 'C1' STO
     'c*COS(ï4)' EVAL 'D1' STO 'b*COS(ï3)' EVAL 'E1' STO
@@ -889,8 +889,8 @@ DIR
     ª
   x01A
     ´ 
-    CLLCD "ACELERACION MAN.CORR." { { "Aceleracion å2:" "Aceleracion de
-    entrada" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'å2' STO
+    CLLCD "ACELERACION MAN.CORR." { 
+    { "Aceleracion å2:" "Aceleracion de entrada" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'å2' STO
     '(a*å2*COS(ï2)-a*ö2^2*SIN(ï2)+b*ö3^2*SIN(ï3))/(b*COS(ï3))' EVAL 'å3' STO
     '-a*å2*SIN(ï2)-a*ö2^2*COS(ï2)+(b*å3*SIN(ï3)+b*ö3^2*COS(ï3))' EVAL 'Ad' STO
     IF å2 ö2 * 0 <
@@ -914,8 +914,8 @@ DIR
     ª
   x01C
     ´ 
-    CLLCD "ACELERACION M.C.INV" { { "Aceleracion å2:" "Aceleracion de entrada"
-    0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'å2' STO
+    CLLCD "ACELERACION M.C.INV" { 
+    { "Aceleracion å2:" "Aceleracion de entrada" 0 } } { 1 0 } { } { } INFORM DROP OBJç DROP 'å2' STO
     '(å2*COS(ï3-ï2)+ö2^2*SIN(ï3-ï2))*a' EVAL 'c*ö4^2*SIN(ï4-ï3)-2*VDES*ö3' EVAL
     'b+c*COS(ï4-ï3)' EVAL ç B N M '(B+N)/M' EVAL 'å4' STO
     '(b*COS(ï3-ï2)+c*COS(ï4-ï2))*a*ö2^2' EVAL '(b*SIN(ï2-ï3)-c*SIN(ï4-ï2))*a*å2'
@@ -936,14 +936,15 @@ DIR
     ª
   x01E
     ´ 
-    CLEAR CLLCD "VEL y ACEL C.Gravedad" { { "Eslabon 2" x01F } { "Eslabon 3"
-    x020 } { "Eslabon 4" x021 } } 1 CHOOSE DROP EVAL
+    CLEAR CLLCD "VEL y ACEL C.Gravedad" { { "Eslabon 2" x01F } 
+    { "Eslabon 3" x020 } { "Eslabon 4" x021 } } 1 CHOOSE DROP EVAL
     ª
   x01F
     ´ 
-    CLEAR CLLCD "C.Grav ESLABON 2" { { "Magnitud" "Distancia al pasador de
-    bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } } { 2 0 } { } { }
-    INFORM DROP OBJç DROP 'ë2' STO 's' STO CLEAR 's*ö2*-SIN(ï2+ë2)' EVAL 'REA' STO
+    CLEAR CLLCD "C.Grav ESLABON 2" { 
+    { "Magnitud" "Distancia al pasador de bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } 
+    } { 2 0 } { } { } INFORM DROP OBJç DROP 'ë2' STO 
+    's' STO CLEAR 's*ö2*-SIN(ï2+ë2)' EVAL 'REA' STO
     's*ö2*COS(ï2+ë2)' EVAL 'IMA' STO ë2 ï2 + 'angulo' STO
     's*COS(angulo)+s*SIN(angulo)*i' EVAL 'RG2' STO 'angulo' PURGE 0 RG2 - 'R12' STO
     R2 RG2 - 'R32' STO 'REA+IMA*i' EVAL 'VS' STO 'REA' PURGE 'IMA' PURGE
@@ -956,9 +957,10 @@ DIR
     ª
   x020
     ´ 
-    CLEAR CLLCD "C.Grav DEL ESLABON 3" { { "Magnitud" "Distancia al pasador A"
-    0 } { "Angulo:" "Angulo respecto a linea A-B" 0 } } { 2 0 } { } { } INFORM DROP
-    OBJç DROP 'ë3' STO 'p' STO CLEAR ë3 ï3 + 'angulo' STO
+    CLEAR CLLCD "C.Grav DEL ESLABON 3" { 
+    { "Magnitud" "Distancia al pasador A" 0 } { "Angulo:" "Angulo respecto a linea A-B" 0 } 
+    } { 2 0 } { } { } INFORM DROP OBJç DROP 'ë3' STO 
+    'p' STO CLEAR ë3 ï3 + 'angulo' STO
     'p*COS(angulo)+p*SIN(angulo)*i' EVAL 'RG3' STO 'angulo' PURGE 0 RG3 - 'R23' STO
     R3 RG3 - 'R43' STO 'p*ö3*((0-1)*SIN(ï3+ë3))' EVAL 'REA' STO 'p*ö3*COS(ï3+ë3)'
     EVAL 'IMA' STO 'REA+IMA*i' EVAL 'VPA' STO 'VA+VPA' EVAL 'VP' STO
@@ -972,9 +974,10 @@ DIR
     ª
   x021
     ´ 
-    CLEAR CLLCD "C.Grav DEL ESLABON 4" { { "Magnitud" "Distancia al pasador de
-    bancada" 0 } { "Angulo:" "Angulo respecto a linea B-O4" 0 } } { 2 0 } { } { }
-    INFORM DROP OBJç DROP 'ë4' STO 'u' STO CLEAR ë4 ï4 + 'angulo' STO
+    CLEAR CLLCD "C.Grav DEL ESLABON 4" { 
+    { "Magnitud" "Distancia al pasador de bancada" 0 } { "Angulo:" "Angulo respecto a linea B-O4" 0 } 
+    } { 2 0 } { } { } INFORM DROP OBJç DROP 'ë4' STO 
+    'u' STO CLEAR ë4 ï4 + 'angulo' STO
     'u*COS(angulo)+u*SIN(angulo)*i' EVAL 'RG4' STO 'angulo' PURGE 0 RG4 - 'R14' STO
     R4 RG4 - 'R34' STO 'u*ö4*((0-1)*SIN(ï4+ë4))' EVAL 'REA' STO 'u*ö4*COS(ï4+ë4)'
     EVAL 'IMA' STO 'REA+IMA*i' EVAL 'VU' STO 'u*å4*((0-1)*SIN(ï4+ë4))' EVAL 'REA'
@@ -987,25 +990,24 @@ DIR
     ª
   x022
     ´ 
-    CLEAR CLLCD "DATOS ESLABONES Y MATRIZ" { { "Eslabon 2" x023 } { "Eslabon 3"
-    x024 } { "Eslabon 4" x025 } { "Matrices" x026 } { "Auto Matriz" x027 } } 1
+    CLEAR CLLCD "DATOS ESLABONES Y MATRIZ" { 
+    { "Eslabon 2" x023 } { "Eslabon 3" x024 } { "Eslabon 4" x025 } { "Matrices" x026 } { "Auto Matriz" x027 } } 1
     CHOOSE DROP EVAL
     ª
   x023
     ´ 
-    CLEAR CLLCD "FUERZA EN ESLABON 2" { { "F1x" "Componente x 1™ fuerza" 0 } {
-    "F1y:" "Componente y 1™ fuerza" 0 } { "F2x" "Componente x 2™ fuerza" 0 } {
-    "F2y:" "Componente y 2™ fuerza" 0 } { "F3x" "Componente x 3™ fuerza" 0 } {
-    "F3y:" "Componente y 3™ fuerza" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
-    'F3y' STO 'F3x' STO 'F2y' STO 'F2x' STO 'F1y' STO 'F1x' STO CLEAR CLLCD "POS D
-    FUERZAS.Repecto CG" { { "RF1x" "Componente x posicion 1™ fuerza" 0 } { "RF1y:"
-    "Componente y posicion 1™ fuerza" 0 } { "RF2x" "Componente x posicion 2™
-    fuerza" 0 } { "RF2y:" "Componente y posicion 2™ fuerza" 0 } { "RF3x"
-    "Componente x posicion 3™ fuerza" 0 } { "RF3y:" "Componente y posicion 3™
-    fuerza" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'RF3y' STO 'RF3x' STO
-    'RF2y' STO 'RF2x' STO 'RF1y' STO 'RF1x' STO CLEAR CLLCD "Masa e Icg Eslabon 2"
-    { { "Masa" "Masa del eslabon 2" 0 } { "Inercia:" "Inercia respecto CG eslabon
-    2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'INERCIA2' STO 'MASA2' STO CLEAR
+    CLEAR CLLCD "FUERZA EN ESLABON 2" { 
+    { "F1x" "Componente x 1™ fuerza" 0 } {"F1y:" "Componente y 1™ fuerza" 0 } { "F2x" "Componente x 2™ fuerza" 0 } 
+    { "F2y:" "Componente y 2™ fuerza" 0 } { "F3x" "Componente x 3™ fuerza" 0 } { "F3y:" "Componente y 3™ fuerza" 0 } 
+    } { 2 0 } { } { } INFORM DROP OBJç DROP
+    'F3y' STO 'F3x' STO 'F2y' STO 'F2x' STO 'F1y' STO 'F1x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { 
+    { "RF1x" "Componente x posicion 1™ fuerza" 0 } { "RF1y:" "Componente y posicion 1™ fuerza" 0 } 
+    { "RF2x" "Componente x posicion 2™ fuerza" 0 } { "RF2y:" "Componente y posicion 2™ fuerza" 0 } 
+    { "RF3x" "Componente x posicion 3™ fuerza" 0 } { "RF3y:" "Componente y posicion 3™ fuerza" 0 } 
+    } { 2 0 } { } { } INFORM DROP OBJç DROP 'RF3y' STO 'RF3x' STO
+    'RF2y' STO 'RF2x' STO 'RF1y' STO 'RF1x' STO CLEAR CLLCD "Masa e Icg Eslabon 2"{ 
+    { "Masa" "Masa del eslabon 2" 0 } { "Inercia:" "Inercia respecto CG eslabon 2" 0 } 
+    } { 2 0 } { } { } INFORM DROP OBJç DROP 'INERCIA2' STO 'MASA2' STO CLEAR
     AS RE 'ASx' STO AS IM 'ASy' STO 'MASA2*ASx-F1x-F2x-F3x' EVAL 'FILA1' STO
     'MASA2*ASy-F1y-F2y-F3y' EVAL 'FILA2' STO
     'INERCIA2*å2-F1y*RF1x+F1x*RF1y-F2y*RF2x+F2x*RF2y-F3y*RF3x+F3x*RF3y' EVAL
@@ -1018,14 +1020,14 @@ DIR
     "F5y:" "Componente y 5™ fuerza" 0 } { "F6x" "Componente x 6™ fuerza" 0 } {
     "F6y:" "Componente y 6™ fuerza" 0 } { "T3:" "Par de torsion" 0 } } { 2 0 } { }
     { } INFORM DROP OBJç DROP 'T3' STO 'F6y' STO 'F6x' STO 'F5y' STO 'F5x' STO
-    'F4y' STO 'F4x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { { "RF4x"
-    "Componente x posicion 4™ fuerza" 0 } { "RF4y:" "Componente y posicion 4™
-    fuerza" 0 } { "RF5x" "Componente x posicion 5™ fuerza" 0 } { "RF5y:"
-    "Componente y posicion 5™ fuerza" 0 } { "RF6x" "Componente x posicion 6™
-    fuerza" 0 } { "RF6y:" "Componente y posicion 6™ fuerza" 0 } } { 2 0 } { } { }
+    'F4y' STO 'F4x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { 
+    { "RF4x" "Componente x posicion 4™ fuerza" 0 } { "RF4y:" "Componente y posicion 4™ fuerza" 0 } 
+    { "RF5x" "Componente x posicion 5™ fuerza" 0 } { "RF5y:" "Componente y posicion 5™ fuerza" 0 } 
+    { "RF6x" "Componente x posicion 6™ fuerza" 0 } { "RF6y:" "Componente y posicion 6™ fuerza" 0 } 
+    } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'RF6y' STO 'RF6x' STO 'RF5y' STO 'RF5x' STO 'RF4y' STO
-    'RF4x' STO CLEAR CLLCD "Masa e Icg Eslabon 3" { { "Masa" "Masa del eslabon 3" 0
-    } { "Inercia:" "Inercia respecto CG eslabon 3" 0 } } { 2 0 } { } { } INFORM
+    'RF4x' STO CLEAR CLLCD "Masa e Icg Eslabon 3" { 
+    { "Masa" "Masa del eslabon 3" 0 } { "Inercia:" "Inercia respecto CG eslabon 3" 0 } } { 2 0 } { } { } INFORM
     DROP OBJç DROP 'INERCIA3' STO 'MASA3' STO CLEAR AP RE 'APx' STO AP IM 'APy' STO
     'MASA3*APx-F4x-F5x-F6x' EVAL 'FILA4' STO 'MASA3*APy-F4y-F5y-F6y' EVAL 'FILA5'
     STO 'INERCIA3*å3-F4y*RF4x+F4x*RF4y-F5y*RF5x+F5x*RF5y-F6y*RF6x+F6x*RF6y-T3' EVAL
@@ -1033,19 +1035,19 @@ DIR
     ª
   x025
     ´ 
-    CLEAR CLLCD "FUERZA EN ESLABON 4" { { "F7x" "Componente x 7™ fuerza" 0 } {
-    "F7y:" "Componente y 7™ fuerza" 0 } { "F8x" "Componente x 8™ fuerza" 0 } {
-    "F8y:" "Componente y 8™ fuerza" 0 } { "F9x" "Componente x 9™ fuerza" 0 } {
-    "F9y:" "Componente y 9™ fuerza" 0 } { "T4:" "Par de torsion" 0 } } { 2 0 } { }
+    CLEAR CLLCD "FUERZA EN ESLABON 4" { 
+    { "F7x" "Componente x 7™ fuerza" 0 } {"F7y:" "Componente y 7™ fuerza" 0 } 
+    { "F8x" "Componente x 8™ fuerza" 0 } {"F8y:" "Componente y 8™ fuerza" 0 } 
+    { "F9x" "Componente x 9™ fuerza" 0 } {"F9y:" "Componente y 9™ fuerza" 0 } 
+    { "T4:" "Par de torsion" 0 } } { 2 0 } { }
     { } INFORM DROP OBJç DROP 'T4' STO 'F9y' STO 'F9x' STO 'F8y' STO 'F8x' STO
-    'F7y' STO 'F7x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { { "RF7x"
-    "Componente x posicion 7™ fuerza" 0 } { "RF7y:" "Componente y posicion 7™
-    fuerza" 0 } { "RF8x" "Componente x posicion 8™ fuerza" 0 } { "RF8y:"
-    "Componente y posicion 8™ fuerza" 0 } { "RF9x" "Componente x posicion 9™
-    fuerza" 0 } { "RF9y:" "Componente y posicion 9™ fuerza" 0 } } { 2 0 } { } { }
+    'F7y' STO 'F7x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { 
+    { "RF7x" "Componente x posicion 7™ fuerza" 0 } { "RF7y:" "Componente y posicion 7™ fuerza" 0 } 
+    { "RF8x" "Componente x posicion 8™ fuerza" 0 } { "RF8y:" "Componente y posicion 8™ fuerza" 0 } 
+    { "RF9x" "Componente x posicion 9™ fuerza" 0 } { "RF9y:" "Componente y posicion 9™ fuerza" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'RF9y' STO 'RF9x' STO 'RF8y' STO 'RF8x' STO 'RF7y' STO
-    'RF7x' STO CLEAR CLLCD "Masa e Icg Eslabon 4" { { "Masa" "Masa del eslabon 4" 0
-    } { "Inercia:" "Inercia respecto CG eslabon 4" 0 } } { 2 0 } { } { } INFORM
+    'RF7x' STO CLEAR CLLCD "Masa e Icg Eslabon 4" { 
+    { "Masa" "Masa del eslabon 4" 0 } { "Inercia:" "Inercia respecto CG eslabon 4" 0 } } { 2 0 } { } { } INFORM
     DROP OBJç DROP 'INERCIA4' STO 'MASA4' STO CLEAR AU RE 'AUx' STO AU IM 'AUy' STO
     'MASA4*AUx-F7x-F8x-F9x' EVAL 'FILA7' STO 'MASA4*AUy-F7y-F8y-F9y' EVAL 'FILA8'
     STO 'INERCIA4*å4-F7y*RF7x+F7x*RF7y-F8y*RF8x+F8x*RF8y-F9y*RF9x+F9x*RF9y-T4' EVAL
@@ -1053,16 +1055,15 @@ DIR
     ª
   x026
     ´ 
-    CLEAR CLLCD "POS D PASADORES ESL2" { { "R12x" "Pasador 12 respecto CG" 0 }
-    { "R12y:" "Pasador 12 respecto CG" 0 } { "R32x" "Pasador 32 respecto CG" 0 } {
-    "R32y:" "Pasador 32 respecto CG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
-    'R32y' STO 'R32x' STO 'R12y' STO 'R12x' STO CLEAR CLEAR CLLCD "POS D PASADORES
-    ESL3" { { "R23x" "Pasador 23 respecto CG" 0 } { "R23y:" "Pasador 23 respecto
-    CG" 0 } { "R43x" "Pasador 43 respecto CG" 0 } { "R43y:" "Pasador 43 respecto
-    CG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'R43y' STO 'R43x' STO 'R23y'
-    STO 'R23x' STO CLEAR CLEAR CLLCD "POS D PASADORES ESL4" { { "R34x" "Pasador 34
-    respecto CG" 0 } { "R34y:" "Pasador 34 respecto CG" 0 } { "R14x" "Pasador 14
-    respecto CG" 0 } { "R14y:" "Pasador 14 respecto CG" 0 } } { 2 0 } { } { }
+    CLEAR CLLCD "POS D PASADORES ESL2" { 
+    { "R12x" "Pasador 12 respecto CG" 0 } { "R12y:" "Pasador 12 respecto CG" 0 } 
+    { "R32x" "Pasador 32 respecto CG" 0 } { "R32y:" "Pasador 32 respecto CG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
+    'R32y' STO 'R32x' STO 'R12y' STO 'R12x' STO CLEAR CLEAR CLLCD "POS D PASADORES ESL3" { 
+    { "R23x" "Pasador 23 respecto CG" 0 } { "R23y:" "Pasador 23 respectoCG" 0 } 
+    { "R43x" "Pasador 43 respecto CG" 0 } { "R43y:" "Pasador 43 respectoCG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'R43y' STO 'R43x' STO 'R23y'
+    STO 'R23x' STO CLEAR CLEAR CLLCD "POS D PASADORES ESL4" { 
+    { "R34x" "Pasador 34 respecto CG" 0 } { "R34y:" "Pasador 34 respecto CG" 0 } 
+    { "R14x" "Pasador 14 respecto CG" 0 } { "R14y:" "Pasador 14 respecto CG" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'R14y' STO 'R14x' STO 'R34y' STO 'R34x' STO CLEAR 1 0 1 0
     0 0 0 0 0 9 çLIST 0 1 0 1 0 0 0 0 0 9 çLIST R12y -1 * R12x R32y -1 * R32x 0 0 0
     0 1 9 çLIST 0 0 -1 0 1 0 0 0 0 9 çLIST 0 0 0 -1 0 1 0 0 0 9 çLIST 0 0 R23y R23x
@@ -1143,8 +1144,8 @@ DIR
     ª
   x029
     ´ 
-    CLEAR CLLCD "PUNTO DEL ESLABON 2" { { "Magnitud" "Distancia al pasador de
-    bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } } { 2 0 } { } { }
+    CLEAR CLLCD "PUNTO DEL ESLABON 2" { 
+    { "Magnitud" "Distancia al pasador de bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'ë21' STO 's1' STO CLEAR 's1*ö2*-SIN(ï2+ë21)' EVAL 'REA'
     STO 's1*ö2*COS(ï2+ë21)' EVAL 'IMA' STO 'REA+IMA*i' EVAL 'VS11' STO 'REA' PURGE
     'IMA' PURGE 's1*å2*-SIN(ï2+ë21)' EVAL 'REA' STO 's1*å2*COS(ï2+ë21)' EVAL 'IMA'
@@ -1157,8 +1158,8 @@ DIR
     ª
   x02A
     ´ 
-    CLEAR CLLCD "PUNTO DEL ESLABON 3" { { "Magnitud" "Distancia al pasador A" 0
-    } { "Angulo:" "Angulo respecto a linea A-B" 0 } } { 2 0 } { } { } INFORM DROP
+    CLEAR CLLCD "PUNTO DEL ESLABON 3" { 
+    { "Magnitud" "Distancia al pasador A" 0 } { "Angulo:" "Angulo respecto a linea A-B" 0 } } { 2 0 } { } { } INFORM DROP
     OBJç DROP 'ë31' STO 'p1' STO CLEAR 'p1*ö3*((0-1)*SIN(ï3+ë31))' EVAL 'REA' STO
     'p1*ö3*COS(ï3+ë31)' EVAL 'IMA' STO 'REA+IMA*i' EVAL 'VPA11' STO 'VA+VPA11' EVAL
     'VP11' STO 'p1*å3*((0-1)*SIN(ï3+ë31))' EVAL 'REA' STO 'p1*å3*COS(ï3+ë31)' EVAL
@@ -1171,8 +1172,8 @@ DIR
     ª
   x02B
     ´ 
-    CLEAR CLLCD "PUNTO DEL ESLABON 4" { { "Magnitud" "Distancia al pasador de
-    bancada" 0 } { "Angulo:" "Angulo respecto a linea B-O4" 0 } } { 2 0 } { } { }
+    CLEAR CLLCD "PUNTO DEL ESLABON 4" { 
+    { "Magnitud" "Distancia al pasador de bancada" 0 } { "Angulo:" "Angulo respecto a linea B-O4" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'ë41' STO 'u1' STO CLEAR 'u1*ö4*((0-1)*SIN(ï4+ë41))' EVAL
     'REA' STO 'u1*ö4*COS(ï4+ë41)' EVAL 'IMA' STO 'REA+IMA*i' EVAL 'VU11' STO
     'u1*å4*((0-1)*SIN(ï4+ë41))' EVAL 'REA' STO 'u1*å4*COS(ï4+ë41)' EVAL 'IMA' STO
@@ -1185,9 +1186,9 @@ DIR
     ª
   x02C
     ´ 
-    CLEAR CLLCD "VEL, ACEL. y MATRIZ" { { "Vel-Acel CG" x02D } { "Vel-Acel
-    Puntos" x02E } { "Matrices" x02F } { "Auto. Matriz" x030 } { "Vec.En Pasadores"
-    x031 } } 1 CHOOSE DROP EVAL
+    CLEAR CLLCD "VEL, ACEL. y MATRIZ" { 
+    { "Vel-Acel CG" x02D } { "Vel-Acel Puntos" x02E } { "Matrices" x02F }
+    { "Auto. Matriz" x030 } { "Vec.En Pasadores" x031 } } 1 CHOOSE DROP EVAL
     ª
   x02D
     ´ 
@@ -1221,8 +1222,8 @@ DIR
     ª
   x033
     ´ 
-    CLEAR CLLCD "C.Grav ESLABON 2" { { "Magnitud" "Distancia al pasador de
-    bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } } { 2 0 } { } { }
+    CLEAR CLLCD "C.Grav ESLABON 2" { 
+    { "Magnitud" "Distancia al pasador de bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'ë2' STO 's' STO CLEAR ë2 ï2 + 'angulo' STO
     's*COS(angulo)+s*SIN(angulo)*i' EVAL 'RG2' STO 'angulo' PURGE 0 RG2 - 'R12' STO
     R2 RG2 - 'R32' STO 's*ö2*-SIN(ï2+ë2)' EVAL 'REA' STO 's*ö2*COS(ï2+ë2)' EVAL
@@ -1236,8 +1237,8 @@ DIR
     ª
   x034
     ´ 
-    CLEAR CLLCD "C.Grav DEL ESLABON 3" { { "Magnitud" "Distancia al pasador A"
-    0 } { "Angulo:" "Angulo respecto a linea A-B" 0 } } { 2 0 } { } { } INFORM DROP
+    CLEAR CLLCD "C.Grav DEL ESLABON 3" { 
+    { "Magnitud" "Distancia al pasador A" 0 } { "Angulo:" "Angulo respecto a linea A-B" 0 } } { 2 0 } { } { } INFORM DROP
     OBJç DROP 'ë3' STO 'p' STO CLEAR ë3 ï3 180 - + 'angulo' STO
     'p*COS(angulo)+p*SIN(angulo)*i' EVAL 'RG3' STO 'angulo' PURGE 0 RG3 - 'R23' STO
     0 R3 - 0 RG3 - + 'R43' STO 'p*ö3*((0-1)*SIN(ï3-180+ë3))' EVAL 'REA' STO
@@ -1252,25 +1253,21 @@ DIR
     ª
   x035
     ´ 
-    CLEAR CLLCD "DATOS ESLABONES Y MATRIZ" { { "Eslabon 2" x036 } { "Eslabon 3"
-    x037 } { "Eslabon 4" x038 } { "Matrices" x039 } { "Auto. Matriz" x03A } } 1
+    CLEAR CLLCD "DATOS ESLABONES Y MATRIZ" { { "Eslabon 2" x036 } 
+    { "Eslabon 3" x037 } { "Eslabon 4" x038 } { "Matrices" x039 } { "Auto. Matriz" x03A } } 1
     CHOOSE DROP EVAL
     ª
   x036
     ´ 
-    CLEAR CLLCD "FUERZA EN ESLABON 2" { { "F1x" "Componente x 1™ fuerza" 0 } {
-    "F1y:" "Componente y 1™ fuerza" 0 } { "F2x" "Componente x 2™ fuerza" 0 } {
-    "F2y:" "Componente y 2™ fuerza" 0 } { "F3x" "Componente x 3™ fuerza" 0 } {
-    "F3y:" "Componente y 3™ fuerza" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
-    'F3y' STO 'F3x' STO 'F2y' STO 'F2x' STO 'F1y' STO 'F1x' STO CLEAR CLLCD "POS D
-    FUERZAS.Repecto CG" { { "RF1x" "Componente x posicion 1™ fuerza" 0 } { "RF1y:"
-    "Componente y posicion 1™ fuerza" 0 } { "RF2x" "Componente x posicion 2™
-    fuerza" 0 } { "RF2y:" "Componente y posicion 2™ fuerza" 0 } { "RF3x"
-    "Componente x posicion 3™ fuerza" 0 } { "RF3y:" "Componente y posicion 3™
-    fuerza" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'RF3y' STO 'RF3x' STO
-    'RF2y' STO 'RF2x' STO 'RF1y' STO 'RF1x' STO CLEAR CLLCD "Masa e Icg Eslabon 2"
-    { { "Masa" "Masa del eslabon 2" 0 } { "Inercia:" "Inercia respecto CG eslabon
-    2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'INERCIA2' STO 'MASA2' STO CLEAR
+    CLEAR CLLCD "FUERZA EN ESLABON 2" { 
+    { "F1x" "Componente x 1™ fuerza" 0 } {"F1y:" "Componente y 1™ fuerza" 0 } { "F2x" "Componente x 2™ fuerza" 0 } 
+    { "F2y:" "Componente y 2™ fuerza" 0 } { "F3x" "Componente x 3™ fuerza" 0 } { "F3y:" "Componente y 3™ fuerza" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
+    'F3y' STO 'F3x' STO 'F2y' STO 'F2x' STO 'F1y' STO 'F1x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { 
+    { "RF1x" "Componente x posicion 1™ fuerza" 0 } { "RF1y:" "Componente y posicion 1™ fuerza" 0 } 
+    { "RF2x" "Componente x posicion 2™ fuerza" 0 } { "RF2y:" "Componente y posicion 2™ fuerza" 0 } 
+    { "RF3x" "Componente x posicion 3™ fuerza" 0 } { "RF3y:" "Componente y posicion 3™ fuerza" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'RF3y' STO 'RF3x' STO
+    'RF2y' STO 'RF2x' STO 'RF1y' STO 'RF1x' STO CLEAR CLLCD "Masa e Icg Eslabon 2"{ 
+    { "Masa" "Masa del eslabon 2" 0 } { "Inercia:" "Inercia respecto CG eslabon 2" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'INERCIA2' STO 'MASA2' STO CLEAR
     AS RE 'ASx' STO AS IM 'ASy' STO 'MASA2*ASx-F1x-F2x-F3x' EVAL 'FILA1' STO
     'MASA2*ASy-F1y-F2y-F3y' EVAL 'FILA2' STO
     'INERCIA2*å2-F1y*RF1x+F1x*RF1y-F2y*RF2x+F2x*RF2y-F3y*RF3x+F3x*RF3y' EVAL
@@ -1278,16 +1275,15 @@ DIR
     ª
   x037
     ´ 
-    CLEAR CLLCD "FUERZA EN ESLABON 3" { { "F4x" "Componente x 4™ fuerza" 0 } {
-    "F4y:" "Componente y 4™ fuerza" 0 } { "F5x" "Componente x 5™ fuerza" 0 } {
-    "F5y:" "Componente y 5™ fuerza" 0 } { "F6x" "Componente x 6™ fuerza" 0 } {
-    "F6y:" "Componente y 6™ fuerza" 0 } { "T3:" "Par de torsion" 0 } } { 2 0 } { }
+    CLEAR CLLCD "FUERZA EN ESLABON 3" { 
+    { "F4x" "Componente x 4™ fuerza" 0 } { "F4y:" "Componente y 4™ fuerza" 0 } { "F5x" "Componente x 5™ fuerza" 0 } 
+    { "F5y:" "Componente y 5™ fuerza" 0 } { "F6x" "Componente x 6™ fuerza" 0 } { "F6y:" "Componente y 6™ fuerza" 0 } 
+    { "T3:" "Par de torsion" 0 } } { 2 0 } { }
     { } INFORM DROP OBJç DROP 'T3' STO 'F6y' STO 'F6x' STO 'F5y' STO 'F5x' STO
-    'F4y' STO 'F4x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { { "RF4x"
-    "Componente x posicion 4™ fuerza" 0 } { "RF4y:" "Componente y posicion 4™
-    fuerza" 0 } { "RF5x" "Componente x posicion 5™ fuerza" 0 } { "RF5y:"
-    "Componente y posicion 5™ fuerza" 0 } { "RF6x" "Componente x posicion 6™
-    fuerza" 0 } { "RF6y:" "Componente y posicion 6™ fuerza" 0 } } { 2 0 } { } { }
+    'F4y' STO 'F4x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { 
+    { "RF4x" "Componente x posicion 4™ fuerza" 0 } { "RF4y:" "Componente y posicion 4™ fuerza" 0 } 
+    { "RF5x" "Componente x posicion 5™ fuerza" 0 } { "RF5y:" "Componente y posicion 5™ fuerza" 0 } 
+    { "RF6x" "Componente x posicion 6™ fuerza" 0 } { "RF6y:" "Componente y posicion 6™ fuerza" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'RF6y' STO 'RF6x' STO 'RF5y' STO 'RF5x' STO 'RF4y' STO
     'RF4x' STO CLEAR CLLCD "Masa e Icg Eslabon 3" { { "Masa" "Masa del eslabon 3" 0
     } { "Inercia:" "Inercia respecto CG eslabon 3" 0 } } { 2 0 } { } { } INFORM
@@ -1303,11 +1299,10 @@ DIR
     "F8y:" "Componente y 8™ fuerza" 0 } { "F9x" "Componente x 9™ fuerza" 0 } {
     "F9y:" "Componente y 9™ fuerza" 0 } { "µ:" "Coeficiente de friccion" 0 } } { 2
     0 } { } { } INFORM DROP OBJç DROP 'µ' STO 'F9y' STO 'F9x' STO 'F8y' STO 'F8x'
-    STO 'F7y' STO 'F7x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { { "RF7x"
-    "Componente x posicion 7™ fuerza" 0 } { "RF7y:" "Componente y posicion 7™
-    fuerza" 0 } { "RF8x" "Componente x posicion 8™ fuerza" 0 } { "RF8y:"
-    "Componente y posicion 8™ fuerza" 0 } { "RF9x" "Componente x posicion 9™
-    fuerza" 0 } { "RF9y:" "Componente y posicion 9™ fuerza" 0 } } { 2 0 } { } { }
+    STO 'F7y' STO 'F7x' STO CLEAR CLLCD "POS D FUERZAS.Repecto CG" { 
+    { "RF7x" "Componente x posicion 7™ fuerza" 0 } { "RF7y:" "Componente y posicion 7™ fuerza" 0 } 
+    { "RF8x" "Componente x posicion 8™ fuerza" 0 } { "RF8y:" "Componente y posicion 8™ fuerza" 0 } 
+    { "RF9x" "Componente x posicion 9™ fuerza" 0 } { "RF9y:" "Componente y posicion 9™ fuerza" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'RF9y' STO 'RF9x' STO 'RF8y' STO 'RF8x' STO 'RF7y' STO
     'RF7x' STO CLEAR CLLCD "Masa e Icg Eslabon 4" { { "Masa" "Masa del eslabon 4" 0
     } } { 2 0 } { } { } INFORM DROP OBJç DROP 'MASA4' STO CLEAR
@@ -1316,13 +1311,12 @@ DIR
     ª
   x039
     ´ 
-    CLEAR CLLCD "POS D PASADORES ESL2" { { "R12x" "Pasador 12 respecto CG" 0 }
-    { "R12y:" "Pasador 12 respecto CG" 0 } { "R32x" "Pasador 32 respecto CG" 0 } {
-    "R32y:" "Pasador 32 respecto CG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
-    'R32y' STO 'R32x' STO 'R12y' STO 'R12x' STO CLEAR CLEAR CLLCD "POS D PASADORES
-    ESL3" { { "R23x" "Pasador 23 respecto CG" 0 } { "R23y:" "Pasador 23 respecto
-    CG" 0 } { "R43x" "Pasador 43 respecto CG" 0 } { "R43y:" "Pasador 43 respecto
-    CG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'R43y' STO 'R43x' STO 'R23y'
+    CLEAR CLLCD "POS D PASADORES ESL2" { 
+    { "R12x" "Pasador 12 respecto CG" 0 } { "R12y:" "Pasador 12 respecto CG" 0 }
+     { "R32x" "Pasador 32 respecto CG" 0 } { "R32y:" "Pasador 32 respecto CG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP
+    'R32y' STO 'R32x' STO 'R12y' STO 'R12x' STO CLEAR CLEAR CLLCD "POS D PASADORES ESL3" { 
+    { "R23x" "Pasador 23 respecto CG" 0 } { "R23y:" "Pasador 23 respecto CG" 0 } 
+    { "R43x" "Pasador 43 respecto CG" 0 } { "R43y:" "Pasador 43 respecto CG" 0 } } { 2 0 } { } { } INFORM DROP OBJç DROP 'R43y' STO 'R43x' STO 'R23y'
     STO 'R23x' STO CLEAR 1 0 1 0 0 0 0 0 8 çLIST 0 1 0 1 0 0 0 0 8 çLIST R12y -1 *
     R12x R32y -1 * R32x 0 0 0 1 8 çLIST 0 0 -1 0 1 0 0 0 8 çLIST 0 0 0 -1 0 1 0 0 8
     çLIST 0 0 R23y R23x -1 * R43y -1 * R43x 0 0 8 çLIST 0 0 0 0 -1 0 µ 0 8 çLIST 0
@@ -1352,8 +1346,8 @@ DIR
         NEXT
       END n COLç
     ª 'MATRIZ2' STO 'MATRIZ1^-1*MATRIZ2' EVAL 'RESULTADO' STO CLEAR MATRIZ1
-    "MATRIZ 1" çTAG MATRIZ2 "MATRIZ 2" çTAG RESULTADO "RESULTADO" çTAG { { "D.PO"
-    x008 } { "D.VE" x015 } { "D.AC" x01B } { "D.DIN" x03E } { "AyVCG" x032 } {
+    "MATRIZ 1" çTAG MATRIZ2 "MATRIZ 2" çTAG RESULTADO "RESULTADO" çTAG { 
+    { "D.PO" x008 } { "D.VE" x015 } { "D.AC" x01B } { "D.DIN" x03E } { "AyVCG" x032 } {
     "AyV-P" x03B } { "MATRIZ" x035 } { "INIC" x002 } } TMENU
     ª
   x03A
@@ -1400,8 +1394,8 @@ DIR
     ª
   x03C
     ´ 
-    CLEAR CLLCD "PUNTO DEL ESLABON 2" { { "Magnitud" "Distancia al pasador de
-    bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } } { 2 0 } { } { }
+    CLEAR CLLCD "PUNTO DEL ESLABON 2" { 
+    { "Magnitud" "Distancia al pasador de bancada" 0 } { "Angulo:" "Angulo respecto a linea O2-A" 0 } } { 2 0 } { } { }
     INFORM DROP OBJç DROP 'ë21' STO 's1' STO CLEAR 's1*ö2*-SIN(ï2+ë21)' EVAL 'REA'
     STO 's1*ö2*COS(ï2+ë21)' EVAL 'IMA' STO 'REA+IMA*i' EVAL 'VS11' STO 'REA' PURGE
     'IMA' PURGE 's1*å2*-SIN(ï2+ë21)' EVAL 'REA' STO 's1*å2*COS(ï2+ë21)' EVAL 'IMA'
@@ -1414,8 +1408,8 @@ DIR
     ª
   x03D
     ´ 
-    CLEAR CLLCD "PUNTO DEL ESLABON 3" { { "Magnitud" "Distancia al pasador A" 0
-    } { "Angulo:" "Angulo respecto a linea A-B" 0 } } { 2 0 } { } { } INFORM DROP
+    CLEAR CLLCD "PUNTO DEL ESLABON 3" { 
+    { "Magnitud" "Distancia al pasador A" 0 } { "Angulo:" "Angulo respecto a linea A-B" 0 } } { 2 0 } { } { } INFORM DROP
     OBJç DROP 'ë31' STO 'p1' STO CLEAR 'p1*ö3*((0-1)*SIN(ï3-180+ë31))' EVAL 'REA'
     STO 'p1*ö3*COS(ï3-180+ë31)' EVAL 'IMA' STO 'REA+IMA*i' EVAL 'VPA11' STO
     'VA+VPA11' EVAL 'VP11' STO 'p1*å3*((0-1)*SIN(ï3-180+ë31))' EVAL 'REA' STO
@@ -1429,9 +1423,8 @@ DIR
     ª
   x03E
     ´ 
-    CLEAR CLLCD "VEL, ACEL. y MATRIZ" { { "Vel-Acel CG" x03F } { "Vel-Acel
-    Puntos" x040 } { "Matrices" x041 } { "Auto. Matriz" x042 } { "Vec.En Pasadores"
-    x043 } } 1 CHOOSE DROP EVAL
+    CLEAR CLLCD "VEL, ACEL. y MATRIZ" { 
+    { "Vel-Acel CG" x03F } { "Vel-Acel Puntos" x040 } { "Matrices" x041 } { "Auto. Matriz" x042 } { "Vec.En Pasadores" x043 } } 1 CHOOSE DROP EVAL
     ª
   x03F
     ´ 
@@ -1473,7 +1466,7 @@ DIR
   $ROMID
      1101
   $TITLE
-     "Biblioteca"
+     "Biblioteca 1.2"
 
 END
 
