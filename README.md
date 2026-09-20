@@ -18,7 +18,6 @@ Dejo el el binario de la biblioteca y el editable, si encuentra algun fallo arre
 ./src = el archivo de biblioteca editable
 ./test = los codigos de zcalc, balan, volan, por separado para hacer prubas con el simulador
 
-
 ### Mini guia de funcionamiento
 <ul>
     <li>**zcalc**: calcula la longitud de accion dos ruedas dentadas, el angulo en grados y las distancias todas en la misma unidad (el resultado sera en esta unidad), para el parametro "ex_0 in_1" si se introduce 1 es relacion interna si se introduce 0 es externa</li>
@@ -33,6 +32,9 @@ En la web (https://www.hpcalc.org/hp49/programming/libs/) se publico una utilida
 Credito al usuario Peter F. Geelhoed. de la web anterio cullo perfil es (https://www.hpcalc.org/authors/112)
 
 ### Mini guia de programacion
+1. El editor se puede descargar de (https://www.hpcalc.org/details/7587)
+2. El archivo de la biblioteca editable se encuentra en la carpeta ./src/biblioteca.hpe
+3. Depues de editarso se exprota el binario como .hp y eso se peude intralar el la calculadora
 
 ### Mini guia de instalacion
 1. Pasar la ultima version del binario a la tarjeta SD
