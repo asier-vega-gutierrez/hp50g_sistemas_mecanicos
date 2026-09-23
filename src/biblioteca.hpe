@@ -499,6 +499,8 @@ DIR
 
   x001
     « 
+    @Configura en modo grados
+    DEG    
     CLEAR CLLCD "Se pasará a coord.polares y formato fixed de 4 deci." MSGBOX
     CYLIN 4 FIX x002
     »
@@ -1466,7 +1468,7 @@ DIR
   $ROMID
      1101
   $TITLE
-     "Biblioteca 1.2"
+     "Biblioteca 1.3"
 
 END
 
